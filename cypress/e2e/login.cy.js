@@ -2,14 +2,16 @@ describe('Login', () => {
   beforeEach(() => {
      //Arrange
     cy.visit('http://localhost:4000')
+    cy.screenshot('apos-visitar-a-pagina')
   })
 
-  it('Login com dados válidos deve permitir entrada no sistema', () => {
+  it.only('Login com dados válidos deve permitir entrada no sistema', () => {
 
     //Act
     cy.get('#username').click().type('julio.lima')
     cy.get('#senha').click().type('123456')
     cy.contains('button', 'Entrar').click()
+    cy.screenshot('apos-clicar-em-entrar')
 
     //Assert
     cy.get('#logo-container').should('be.visible').contains('Banco')

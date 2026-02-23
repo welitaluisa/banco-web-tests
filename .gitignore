@@ -140,3 +140,5 @@ vite.config.ts.timestamp-*
 #Video files
 *.mp4
 *.avi
+# Screenshots
+*.png
